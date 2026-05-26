@@ -32,12 +32,20 @@
     "cafci-worker:r2:download": "pnpm --filter @argentinadatos/cafci-worker r2:download",
     "cafci-worker:db:rebuild-from-static": "pnpm --filter @argentinadatos/cafci-worker db:rebuild-from-static",
     "migrate": "node scripts/migrate.js",
-    "seed:fci-otros": "node scripts/seed-fci-otros.js"
+    "seed:fci-otros": "node scripts/seed-fci-otros.js",
+    "sync": "node sync/sync-to-supabase.js",
+    "sync:cotizaciones": "node sync/sync-to-supabase.js cotizaciones",
+    "sync:indices": "node sync/sync-to-supabase.js indices",
+    "sync:tasas": "node sync/sync-to-supabase.js tasas",
+    "sync:fci": "node sync/sync-to-supabase.js fci",
+    "sync:rem": "node sync/sync-to-supabase.js rem",
+    "dashboard:dev": "vite --config vite.dashboard.config.js"
   },
   "devDependencies": {
     "@es-js/vite-plugin-esjs": "^0.1.0-beta.2",
     "@hono/vite-dev-server": "^0.23.0",
     "axios": "^1.13.2",
+    "chart.js": "^4.5.1",
     "cheerio": "1.0.0-rc.12",
     "collect.js": "^4.36.1",
     "date-fns": "^4.1.0",
@@ -65,6 +73,7 @@
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",
+    "@supabase/supabase-js": "^2.49.4",
     "better-sqlite3": "^12.5.0",
     "db-static-api": "0.0.1-alpha.0",
     "defuddle": "^0.18.1",
